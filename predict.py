@@ -1,8 +1,6 @@
 import numpy as np
 from tensorflow.keras.models import model_from_json
-import os
 from tensorflow.keras.preprocessing.image import load_img, img_to_array
-import os.path as op
 
 
 hw={'height':224, 'width':224}
