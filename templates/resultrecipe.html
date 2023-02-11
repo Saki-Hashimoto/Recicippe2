@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+{% block content %}
+<main>
+    <div class='result-main-content wrapper'>
+        <h1>おすすめレシピ</h1>
+            <div class='wrappergrid'>
+                <div class='list'>
+                    <li><a href='{{ list3[0] }}'>{{ list1[0] }}<img src='{{ list2[0] }}' style='height: 200px; width: 250px'></a></li>
+                    <p>{{ list4[0] }}</p>
+                </div>
+
+                <div class='list'>
+                    <li><a href='{{ list3[1] }}'>{{ list1[1] }}<img src='{{ list2[1] }}' style='height: 200px; width: 250px'></a></li>
+                    <p>{{ list4[1] }}</p>
+                </div>
+
+                <div class='list'>
+                    <li><a href='{{ list3[2] }}'>{{ list1[2] }}<img src='{{ list2[2] }}' style='height: 200px; width: 250px'></a></li>
+                    <p>{{ list4[2] }}</p>
+                </div>
+            </div>
+    </div>
+</main>
+{% endblock %}

@@ -1,0 +1,242 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background:#ddd url(../images/image3.jfif);
+  background-size:cover;
+}
+/* body {
+  margin: 0;
+  font-family: "Hiragino Sans W3", "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+  background-color:antiquewhite;
+} */
+
+/* *********************************
+headerの設定
+*********************************** */
+header {
+  height: 60px;
+  width: 100%;
+  padding: 0px 15px;
+  background-color: rgba(233, 145, 68, 0.822);
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  display: flex;
+}
+
+.logo {
+  font-size: 25px;
+}
+
+nav {
+  margin: 0 0 0 auto;
+}
+
+ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: #ffffff;
+  text-decoration: none;
+  display: block;
+  line-height: 60px;
+  padding: 0 20px;
+}
+
+/* *********************************　
+mainの設定
+*********************************** */
+main {
+  padding: 60px;
+  text-align: center;
+  width: 100%;
+  margin: 0 auto;
+  top: 0;
+}
+
+.content {
+	box-sizing: border-box;
+	width:50%;
+  background-color:#ffffffb3;
+	color: #666;
+	padding:.7em;
+	margin: 100px auto;
+	/* border: 3px solid rgba(115, 210, 230); */
+	border-radius: 15px;
+	}
+  
+/* .indexcontent{
+  background:#ddd url(../images/image1.jpg);
+  background-size:cover;
+} */
+
+.content_title{
+  color:#fff;
+  font-size:70px;
+  text-shadow: 0 0 10px red;
+  /* text-shadow: 2px 2px 0 red; */
+}
+
+.content p { /* p要素に背景や角丸を指定 */
+  text-align: left;
+	margin:5px 0 0;
+	padding:10px;
+	background-color: rgba(250, 178, 44, 0.652);;
+	border-radius:8px;
+	font-size:15px;
+	}
+
+.content h1 {
+  font-size: 20px;
+  color: #61370d;/* 文字色 */
+  padding: 0.5em 0;/* 上下の余白 */
+  border-top: solid 3px #61370d;/* 上線 */
+  border-bottom: solid 3px #61370d;/* 下線 */
+  font-size:30px;
+}
+
+.content span { /* span要素（質問テキスト）をブロック化し横に並べる */
+  color: #311901;/* 文字色 */
+	width: 40%;
+	padding: 5px;
+	display: inline-block;
+	vertical-align: top;
+  font-size:15px;
+}
+
+
+
+/* 「click」ボタンのスタイル */
+
+/* .click_btn{
+  justify-content: space-around;
+} 横並びにしたいけどできなかった*/
+
+.click_btn a {
+  text-align: center;
+  margin: 20px auto;
+  padding: 1px;
+  width: 200px;
+  font-size: 18px;
+  background-color: rgb(34, 174, 102);
+  border-radius: 50vh;
+}
+
+.click_btn a:hover {
+  background-color: rgb(4, 129, 68);
+}
+
+
+/* *********************************　
+calculationの設定
+*********************************** */
+.foodinput{
+  width: 300px;
+}
+
+/* 「計算する」ボタンのスタイル */
+.calc_btn [type="submit"]{
+	cursor:pointer;
+  text-align: center;
+	font-size: 18px;
+	font-weight:bold;
+	width:200px;
+	padding:4px 10px;
+	margin:.5em;
+	color:#fff;
+  border:1px solid #bbb;
+  background: rgb(34, 174, 102);
+	border-radius: 50px;
+}
+
+.calc_btn [type="submit"]:hover {
+	background: rgb(4, 129, 68);
+	}
+
+
+/* *********************************　
+resultrecipeの設定
+*********************************** */
+.result-main-content{
+  margin: 150px auto;
+  background-color:#ffffffb3;
+	color: #666;
+	padding:.7em;
+	margin: 150px auto;
+	/* border: 3px solid rgba(115, 210, 230); */
+	border-radius: 15px;
+}
+
+.result-main-content h1{
+  font-size: 30px;
+  color: #61370d;/* 文字色 */
+  padding: 0.5em 0;/* 上下の余白 */
+  border-top: solid 3px #61370d;/* 上線 */
+  border-bottom: solid 3px #61370d;/* 下線 */
+  align-items: flex-start
+}
+
+.wrappergrid{
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: space-between;
+  /* justify-content: space-around; */
+  align-items: flex-end;
+}
+
+.wrappergrid li{
+  color: #364e96;
+  font-size: 18px;
+  font-weight: bold;
+  list-style: none;
+}
+
+.wrappergrid li:hover {
+  background-color: rgba(18, 172, 103, 0.305);
+}
+
+.wrappergrid li a{
+  color: #364e96;
+}
+
+.wrappergrid li a:hover {
+  color: #041a5b;
+}
+
+.wrappergrid p{
+  color: #364e96;
+  font-size: 25px;
+}
+
+
+/* *********************************　
+footerの設定
+*********************************** */
+footer {
+  width: 100%; /* 幅いっぱいを指定 */
+  height: 50px; /* 高さを指定 */
+  display: inline-block;
+  background: rgba(233, 145, 68, 0.822); /* 背景色を指定 */
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+}
+
+.footer_logo {
+  line-height: 50px;
+  color: #fff;
+}
+
+
+.uploadresult{
+  color: #fff;
+  font-size: 20px;
+  margin: 150px auto;
+}

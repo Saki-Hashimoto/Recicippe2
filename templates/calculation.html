@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+{% block content %}
+<main>
+    <div class="content">
+        <h1>食材と条件を入力してください</h1>
+        <form action="/resultrecipe" method="POST">
+            <p>
+                <label><span>食材</span>
+                    <input type="text" name="name" placeholder="食材" class="foodinput">
+                </label>
+            </p>
+            <p>
+                <label><span>ジャンル</span>
+                    <input type="text" name="genre" placeholder='ジャンル（例：和食・洋食・中華）' class="foodinput">
+                </label>
+            </p>
+            <p>
+                <label><span>シーン</span>
+                    <input type="text" name="scene" placeholder='シーン（例：ダイエット・筋トレ・養生）' class="foodinput">
+                </label>
+            </p>
+            <div class="calc_btn">
+                <input type="submit" value='レシピ検索'>
+            </div>
+        </form>
+    </div>
+</main>
+{% endblock %}
