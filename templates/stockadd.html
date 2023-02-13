@@ -1,0 +1,10 @@
+{% extends "stockindex.html" %}
+
+{% block content %}
+<div>タスクの追加</div>
+<form method="post">
+  <input type="text" name="new_task" placeholder="タスクを入力">
+  <input type="submit" value="追加">
+</form>
+<br><button onclick="location.href='/'">一覧に戻る</button>
+{% endblock %}

@@ -3,6 +3,7 @@ import os
 from flask import Flask, render_template, request
 from getrecipe import GetRecipeURL
 from predict import TestProcess
+from stock import saveCSV
 
 UPLOAD_FOLDER='./static/food_image'
 
@@ -30,6 +31,23 @@ def upload_user_files():
         upload_file.save(img_path)
         name = TestProcess(img_path)
         return render_template('uploadresult.html',result=name, img_path=img_path)
+
+#--------------------------------------#
+
+#---------------在庫管理------------------#
+
+# @app.route('/')
+# def upload():
+#     return render_template('stockmain.html')
+
+# @app.route('/stockmain', methods=['GET', 'POST'])
+# def upload_user_files():
+#     if request.method == 'POST':
+#         upload_file = request.files['upload_file']
+#         img_path = os.path.join(UPLOAD_FOLDER,upload_file.filename)
+#         upload_file.save(img_path)
+#         name = saveCSV(img_path)
+#         return render_template('uploadresult.html',result=name, img_path=img_path)
 
 #--------------------------------------#
 

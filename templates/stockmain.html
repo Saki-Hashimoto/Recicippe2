@@ -1,0 +1,23 @@
+{% extends "stockindex.html" %}
+
+{% block content %}
+<div>食材一覧</div>
+<button onclick="location.href='/stockadd'">食材の追加</button>
+<table border="1">
+
+  <tr>
+    <th>食材</th>
+    <th></th>
+    <th></th>
+  </tr>
+
+  {% for task in tasks %}
+  <tr>
+    <td>{{ task[1] }}</td>
+    <td><form action="/stockupdate" method="POST"><button type="submit" name="update" value="{{ loop.index0 }}">編集</button></form></td>
+    <td><form method="POST"><button type="submit" name="done" value="{{ loop.index0 }}">使用</button></form></td>
+  </tr>
+  {% endfor %}
+
+</table>
+{% endblock %}
