@@ -1,9 +1,12 @@
 
 import os
+import pandas as pd
+import datetime
 from flask import Flask, render_template, request
 from getrecipe import GetRecipeURL
 from predict import TestProcess
 from stock import saveCSV
+
 
 UPLOAD_FOLDER='./static/food_image'
 
@@ -56,18 +59,57 @@ def upload_user_files():
 
 #---------------在庫管理------------------#
 
-# @app.route('/')
-# def upload():
-#     return render_template('stockmain.html')
+column_names = ['date','task']
+df = pd.read_csv('./csv/tasks.csv')
+tasks = df.to_numpy().tolist()
 
-# @app.route('/stockmain', methods=['GET', 'POST'])
-# def upload_user_files():
-#     if request.method == 'POST':
-#         upload_file = request.files['upload_file']
-#         img_path = os.path.join(UPLOAD_FOLDER,upload_file.filename)
-#         upload_file.save(img_path)
-#         name = saveCSV(img_path)
-#         return render_template('uploadresult.html',result=name, img_path=img_path)
+def saveCSV(array):
+    #配列からDataframeへ
+    tasks_df = pd.DataFrame(array, columns=column_names)
+    tasks_df.to_csv('./csv/tasks.csv', index=False)
+
+#todo一覧画面
+@app.route('/stockmain', methods=['GET','POST'])
+def main():
+    if request.method == 'GET':
+        return render_template('stockmain.html', tasks = tasks)
+    else:
+        #完了ボタンを押した時の動作
+        if request.form.get('done') != None:
+            done_index = int(request.form.get('done'))
+            del tasks[done_index]
+            saveCSV(tasks)
+            return render_template('stockmain.html', tasks = tasks)
+        #編集画面でタスクを編集した時の動作
+        elif request.form.get('updated_task') != None:
+            updated_task = request.form.get('updated_task')
+            updated_index = request.form.get('updated_index')
+            date_added = datetime.datetime.now().date()
+            task = [date_added, updated_task]
+            tasks[int(updated_index)] = task
+            saveCSV(tasks)
+            return render_template('stockmain.html', tasks = tasks)
+
+#todoの新規作成
+@app.route('/stockadd', methods=['GET', 'POST'])
+def add():
+    if request.method == 'GET':
+        return render_template('stockadd.html')
+    else:
+        #HTMLのテキストボックスの情報
+        added_task = request.form.get('new_task')
+        date_added = datetime.datetime.now().date()
+        task = [date_added, added_task]
+        #配列に追加
+        tasks.append(task)
+        saveCSV(tasks)
+        return render_template('stockadd.html')
+
+#todoを更新
+@app.route('/stockupdate', methods=['POST'])
+def update_init():
+    update_index = int(request.form.get('update'))
+    return render_template('stockupdate.html', task_title = tasks[update_index][1], task_index = update_index)
 
 #--------------------------------------#
 
