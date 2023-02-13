@@ -1,10 +1,13 @@
-{% extends "stockindex.html" %}
-
+{% extends "layout.html" %}
 {% block content %}
-<div>タスク編集</div>
-<form action="/stockmain" method="post">
-    <input type="text" name="updated_task" value="{{ task_title }}">
-    <button type="submit" name="updated_index" value="{{ task_index }}">変更</button>
-</form>
-
+<main>
+    <div class="indexcontent">
+        <h1 class="content_title">〜 Recicippe 〜</h1>
+        <div class="content">
+        <div>タスク編集</div>
+        <form action="/stockmain" method="post">
+            <input type="text" name="updated_task" value="{{ task_title }}">
+            <button type="submit" name="updated_index" value="{{ task_index }}">変更</button>
+        </form>
+</main>
 {% endblock %}
