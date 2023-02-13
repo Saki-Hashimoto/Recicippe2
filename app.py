@@ -17,6 +17,26 @@ def index():
 
 #--------------------------------------#
 
+#---------------layout1234------------------#
+
+@app.route("/layout1")
+def layout1():
+    return render_template('layout1.html')
+
+@app.route("/layout2")
+def layout2():
+    return render_template('layout2.html')
+
+@app.route("/layout3")
+def layout3():
+    return render_template('layout3.html')
+
+@app.route("/layout4")
+def layout4():
+    return render_template('layout4.html')
+
+#--------------------------------------#
+
 #---------------食材アップロード------------------#
 
 @app.route('/foodupload')
