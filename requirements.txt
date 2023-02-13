@@ -4,11 +4,6 @@ requests==2.28.1
 beautifulsoup4==4.11.1
 urllib3==1.26.14
 tensorflow-cpu==2.10.0
-tensorboard==2.10.0 
-tensorboard-data-server==0.6.1  
-tensorboard-plugin-wit==1.8.1     
-tensorflow-estimator==2.10.0 
-tensorflow-io-gcs-filesystem==0.30.0
 numpy==1.23.5
 keras==2.10.0         
 keras-preprocessing==1.1.2
