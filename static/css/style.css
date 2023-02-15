@@ -53,7 +53,21 @@ a {
 /* *********************************　
 layoutの設定
 *********************************** */
+.logo a {
+  color: #ffffff;
+}
 
+.logo a:hover {
+  color: rgb(255, 255, 255);
+}
+
+.menu a {
+  color: #ffffff;
+}
+
+.menu a:hover {
+  color: rgb(34, 174, 102);
+}
 
 
 /* *********************************　
@@ -78,11 +92,6 @@ main {
 	border-radius: 15px;
 	}
   
-/* .indexcontent{
-  background:#ddd url(../images/image1.jpg);
-  background-size:cover;
-} */
-
 .content_title{
   color:#fff;
   font-size:70px;
