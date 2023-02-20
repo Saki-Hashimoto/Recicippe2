@@ -7,11 +7,6 @@ body {
   background:#ddd url(../images/image3.jfif);
   background-size:cover;
 }
-/* body {
-  margin: 0;
-  font-family: "Hiragino Sans W3", "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
-  background-color:antiquewhite;
-} */
 
 /* *********************************
 headerの設定
@@ -66,9 +61,9 @@ layoutの設定
 }
 
 .menu a:hover {
-  color: rgb(34, 174, 102);
+  color: #ffffff;
+  text-shadow: 3px 4px 3px rgb(84, 73, 57);
 }
-
 
 /* *********************************　
 mainの設定
@@ -88,7 +83,6 @@ main {
 	color: #666;
 	padding:.7em;
 	margin: 100px auto;
-	/* border: 3px solid rgba(115, 210, 230); */
 	border-radius: 15px;
 	}
   
@@ -96,10 +90,9 @@ main {
   color:#fff;
   font-size:70px;
   text-shadow: 0 0 10px red;
-  /* text-shadow: 2px 2px 0 red; */
 }
 
-.content p { /* p要素に背景や角丸を指定 */
+.content p { 
   text-align: left;
 	margin:5px 0 0;
 	padding:10px;
@@ -110,15 +103,15 @@ main {
 
 .content h1 {
   font-size: 20px;
-  color: #61370d;/* 文字色 */
-  padding: 0.5em 0;/* 上下の余白 */
-  border-top: solid 3px #61370d;/* 上線 */
-  border-bottom: solid 3px #61370d;/* 下線 */
+  color: #61370d;
+  padding: 0.5em 0;
+  border-top: solid 3px #61370d;
+  border-bottom: solid 3px #61370d;
   font-size:30px;
 }
 
-.content span { /* span要素（質問テキスト）をブロック化し横に並べる */
-  color: #311901;/* 文字色 */
+.content span { 
+  color: #311901;
 	width: 40%;
 	padding: 5px;
 	display: inline-block;
@@ -126,13 +119,6 @@ main {
   font-size:15px;
 }
 
-
-
-/* 「click」ボタンのスタイル */
-
-/* .click_btn{
-  justify-content: space-around;
-} 横並びにしたいけどできなかった*/
 
 .click_btn a {
   text-align: center;
@@ -148,6 +134,15 @@ main {
   background-color: rgb(4, 129, 68);
 }
 
+/* *********************************　
+layout2の設定
+*********************************** */
+.content{
+  color: #364e96;
+  font-size: 18px;
+  font-weight:bold;
+}
+
 
 /* *********************************　
 calculationの設定
@@ -156,7 +151,6 @@ calculationの設定
   width: 300px;
 }
 
-/* 「計算する」ボタンのスタイル */
 .calc_btn [type="submit"]{
 	cursor:pointer;
   text-align: center;
@@ -185,16 +179,15 @@ resultrecipeの設定
 	color: #666;
 	padding:.7em;
 	margin: 150px auto;
-	/* border: 3px solid rgba(115, 210, 230); */
 	border-radius: 15px;
 }
 
 .result-main-content h1{
   font-size: 30px;
-  color: #61370d;/* 文字色 */
-  padding: 0.5em 0;/* 上下の余白 */
-  border-top: solid 3px #61370d;/* 上線 */
-  border-bottom: solid 3px #61370d;/* 下線 */
+  color: #61370d;
+  padding: 0.5em 0;
+  border-top: solid 3px #61370d;
+  border-bottom: solid 3px #61370d;
   align-items: flex-start
 }
 
@@ -202,7 +195,6 @@ resultrecipeの設定
   display: inline-flex;
   flex-direction: row;
   justify-content: space-between;
-  /* justify-content: space-around; */
   align-items: flex-end;
 }
 
@@ -235,10 +227,10 @@ resultrecipeの設定
 footerの設定
 *********************************** */
 footer {
-  width: 100%; /* 幅いっぱいを指定 */
-  height: 50px; /* 高さを指定 */
+  width: 100%; 
+  height: 50px; 
   display: inline-block;
-  background: rgba(233, 145, 68, 0.822); /* 背景色を指定 */
+  background: rgba(233, 145, 68, 0.822);
   text-align: center;
   position: fixed;
   bottom: 0;
