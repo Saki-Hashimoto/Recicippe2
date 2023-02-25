@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+{% block content %}
+<main>
+    <div class="indexcontent">
+        <h1 class="content_title">〜 Recicippe 〜</h1>
+        <div class="content">
+            <div>個数変更</div>
+            <form action="/stockmain" method="post">
+                <input type="text" name="updated_food_count" value="{{ food_count }}">
+                <button type="submit" name="updated_index" value="{{ food_index }}">変更</button>
+            </form>
+    <div>
+</main>
+{% endblock %}

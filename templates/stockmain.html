@@ -8,18 +8,28 @@
           <table border="1">
           </div>
           <tr>
-            <th>食材</th>
-            <th></th>
-            <th></th>
-          </tr>
+            <th scope="col">日付</th>
+            <th scope="col">食材</th>
+            <!-- <th scope="col">個数</th> -->
+            <th scope="col">食材の編集</th>
+            <!-- <th scope="col">個数の変更</th> -->
+            <th scope="col">使用</th>
+        </tr>
     
       {% for task in tasks %}
       <tr>
+        <td>{{ task[0] }}</td>
         <td>{{ task[1] }}</td>
-        <td><form action="/stockupdate" method="POST"><button type="submit" name="update" value="{{ loop.index0 }}">編集</button></form></td>
+        <!-- <td>{{ task[2] }}</td> -->
+        <td><form action="/stockupdate" method="POST"><button type="submit" name="update" value="{{ loop.index0 }}">食材の編集</button></form></td>
+        <!-- <td><form action='/stockquantityupdate' method="POST"><button type="submit" name="quantityupdate" value="{{ loop.index0 }}">個数の変更</button></form></td> -->
         <td><form method="POST"><button type="submit" name="done" value="{{ loop.index0 }}">使用</button></form></td>
       </tr>
       {% endfor %}
+
+      <!-- <div class="calc_btn">
+        <input type="submit" value='レシピ検索'>
+      </div> -->
     
     </table>
 </main>

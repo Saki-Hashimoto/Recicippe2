@@ -6,10 +6,10 @@
         <form action="/resultrecipe" method="POST">
             <p>
                 <label><span>食材</span>
-                    <input type="text" name="name" placeholder="食材" class="foodinput">
+                    <input type="text" name="name" placeholder="食材" class="foodinput" value="">
                 </label>
             </p>
-            <p>
+            <!-- <p>
                 <label><span>ジャンル</span>
                     <input type="text" name="genre" placeholder='ジャンル（例：和食・洋食・中華）' class="foodinput">
                 </label>
@@ -18,7 +18,63 @@
                 <label><span>シーン</span>
                     <input type="text" name="scene" placeholder='シーン（例：ダイエット・筋トレ・かぜ）' class="foodinput">
                 </label>
-            </p>
+            </p> -->
+
+            <!-- <section id="select"> -->
+                <!-- <h2 class="message2"> -->
+                    <!-- さらにレシピを絞り込むために以下の条件を指定してください -->
+                <!-- </h2>
+                <div class="select-button"> -->
+                    <p>
+                        <label><span>ジャンル</span>
+                            <input type="radio" id="r1" name="radio1" value="和食" required class="r-button">
+                            <label for="r1">和食</label>
+                            <input type="radio" id="r2" name="radio1" value="洋食" class="r-button">
+                            <label for="r2">洋食</label>
+                            <input type="radio" id="r3" name="radio1" value="中華" class="r-button">
+                            <label for="r2">中華</label>
+                            <input type="radio" id="r4" name="radio1" value="韓国" class="r-button">
+                            <label for="r2">韓国</label>
+                            <input type="radio" id="r5" name="radio1" value="エスニック" class="r-button">
+                            <label for="r2">エスニック</label>
+                            <input type="radio" id="r6" name="radio2" value="" class="r-button">
+                            <label for="r4">おまかせ</label>
+                        <!-- <input type="text" name="genre" placeholder='ジャンル' class="foodinput"> -->
+                        </label>
+                    </p>
+
+                    <p>
+                        <label><span>手軽さ</span>
+                        <input type="radio" id="r7" name="radio2" value="かんたん" required class="r-button">
+                        <label for="r3">かんたん</label>
+                        <input type="radio" id="r8" name="radio2" value="じっくり" class="r-button">
+                        <label for="r4">じっくり</label>
+                        <input type="radio" id="r9" name="radio2" value="" class="r-button">
+                        <label for="r4">おまかせ</label>
+                        </label>
+                    </p>
+
+                    <p>
+                        <label><span>その他</span>
+                            <input type="text" name="name" placeholder="ダイエット・筋トレ・かぜ など" class="foodinput" value="">
+                        </label>
+                    </p>
+                    <!-- <p class="radio-button">
+                        <b>その他</b>
+                            <input type="text" name="genre" placeholder='その他' class="foodinput">
+                    </p> -->
+                    <!-- <p class="radio-button">
+                        <b>定番or穴場</b>
+                        <br>
+                        <input type="radio" id="r5" name="radio3" value="定番" required class="r-button">
+                        <label for="r5">定番</label>
+                        <br>
+                        <input type="radio" id="r6" name="radio3" value="穴場" class="r-button">
+                        <label for="r6">穴場</label>
+                    </p> -->
+                </div>
+            <!-- </section> -->
+
             <div class="calc_btn">
                 <input type="submit" value='レシピ検索'>
             </div>

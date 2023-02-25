@@ -57,8 +57,9 @@ def upload_user_files():
 
 #--------------------------------------#
 
-#---------------在庫管理------------------#
+#---------------食材管理------------------#
 
+# column_names = ['date','task','quantity']
 column_names = ['date','task']
 df = pd.read_csv('./csv/tasks.csv')
 tasks = df.to_numpy().tolist()
@@ -85,6 +86,13 @@ def main():
             tasks[int(updated_index)] = task
             saveCSV(tasks)
             return render_template('stockmain.html', tasks = tasks)
+        # elif request.form.get('updated_food_count') != None:
+        #     updated_food_count = request.form.get('updated_food_count') # 変更後の食材の個数を取得
+        #     updated_index = request.form.get('updated_index') # 個数を変更した食材のインデックス番号を取得
+        #     food = [tasks[int(updated_index)], updated_food_count] # 食材名, 変更後の食材の個数
+        #     tasks[int(updated_index)] = food # 該当する食材の行を更新
+        #     saveCSV(tasks)
+        #     return render_template('stockmain.html', foods = tasks)
 
 @app.route('/stockadd', methods=['GET', 'POST'])
 def add():
@@ -105,6 +113,15 @@ def update_init():
 
 #--------------------------------------#
 
+#---------------食材の個数変更------------------#
+# @app.route('/stockquantityupdate', methods=['POST'])
+# def stockupdate_init():
+#     food_index = int(request.form.get('quantityupdate')) # 何番目の食材のボタンが押されたのかを取得
+#     return render_template('stockquantityupdate.html', food_count = tasks[food_index][2], food_index = food_index)
+    # return render_template('stockquantityupdate.html', food_index = food_index, food_count = tasks[food_index][1]) # foods[update_index][1] → 食材と個数がセットになっているリストから、個数のみを取り出している
+#--------------------------------------#
+
+
 #---------------食材・条件入力------------------#
 @app.route("/recipesearch",methods=['GET','POST'])
 def calculation():
@@ -118,9 +135,12 @@ def resultrecipe():
         return render_template('resultrecipe.html')
     elif request.method == "POST":
         name = request.form['name']
-        genre = request.form['genre']
-        scene = request.form['scene']
-        url_list, recipe_name_list, recipe_img_list, time_list = GetRecipeURL(name, genre, scene)
+        # genre = request.form['genre']
+        # scene = request.form['scene']
+        radio_1 = request.form['radio1']
+        radio_2 = request.form['radio2']
+        # url_list, recipe_name_list, recipe_img_list, time_list = GetRecipeURL(name, genre, scene)
+        url_list, recipe_name_list, recipe_img_list, time_list = GetRecipeURL(name, radio_1, radio_2)
         return render_template('resultrecipe.html', list1 = recipe_name_list, list2 = recipe_img_list, list3 = url_list, list4 = time_list)       
 
 if __name__ == "__main__":
